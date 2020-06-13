@@ -1,8 +1,13 @@
-import '../assets/app.css';
 import Vue from 'vue';
-import App from './App.vue';
+import Home from './App.vue';
+import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import './assets/styles/styles.css'
+
+Vue.use(BootstrapVue);
 
 new Vue({
   el: '#app',
-  render: h => h(App)
+  render: h => h(Home)
 })

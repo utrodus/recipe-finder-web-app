@@ -1,14 +1,14 @@
 <template>
-  <div class="full-width center-content">
-    <hello-component name="Muhammad" />
-  </div>
+  <Home />
 </template>
 
 <script>
-import HelloComponent from "./components/HelloComponent.vue";
+
+import Home from './pages/Home.vue';
+
 export default {
   components: {
-    HelloComponent
+    Home
   }
 };
 </script>
