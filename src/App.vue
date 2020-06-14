@@ -1,14 +1,58 @@
 <template>
-  <Home />
+  <div id="app">
+    <b-navbar toggleable="lg" type="light" variant="faded" class="shadow-sm">
+      <b-container>
+        <b-navbar-brand href="#">
+          <img src="./assets/img/search.png" alt="Logo App" class="d-inline-block" />
+          <span class="logo">Cari Resep</span>
+        </b-navbar-brand>
+
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav class="ml-auto">
+            <b-nav-item>
+              <router-link to="/" active-class="active">
+                <b-icon-house-door class="d-inline-block text-top"></b-icon-house-door>Recipe
+              </router-link>
+            </b-nav-item>
+            <b-nav-item>
+              <router-link to="/explore" exact-active-class="exact-active">
+                <b-icon-grid></b-icon-grid>Explore
+              </router-link>
+            </b-nav-item>
+            <b-nav-item>
+              <router-link to="/about">
+                <b-icon-info-circle></b-icon-info-circle>About
+              </router-link>
+            </b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-container>
+    </b-navbar>
+     <router-view />
+  </div>
 </template>
 
 <script>
-
-import Home from './pages/Home.vue';
-
-export default {
-  components: {
-    Home
-  }
-};
+export default {};
 </script>
+
+<style scoped>
+a {
+  text-decoration: none;
+  color: #646464;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #FF9966;
+}
+
+a:active {
+  color: #fd8d31;
+}
+
+
+</style>
+

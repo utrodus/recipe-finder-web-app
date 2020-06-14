@@ -1,9 +1,33 @@
 @font-face {
     font-family: 'NunitoSans';
-    src: url('../fonts/NunitoSans-Regular.ttf'),url('../fonts/NunitoSans-Bold.ttf');
+    src: url('../fonts/NunitoSans-Regular.ttf'), url('../fonts/NunitoSans-Bold.ttf');
     font-style: normal;
 }
 
 * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'NunitoSans', Arial, Helvetica, sans-serif;
+}
+
+
+.logo {
+    color: #ff7014;
+}
+
+img {
+    width: 40px;
+}
+
+.btn .b-icon.bi, .nav-link .b-icon.bi, .dropdown-toggle .b-icon.bi, .dropdown-item .b-icon.bi, .input-group-text .b-icon.bi {
+    vertical-align: text-top;
+    margin-right: 10px;
+}
+
+.nav-item a {
+    font-family: 'NunitoSans-Bold';
 }
