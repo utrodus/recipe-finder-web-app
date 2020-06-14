@@ -12,17 +12,17 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
             <b-nav-item>
-              <router-link to="/" active-class="active">
+              <router-link  to="/" exact>
                 <b-icon-house-door class="d-inline-block text-top"></b-icon-house-door>Recipe
               </router-link>
             </b-nav-item>
             <b-nav-item>
-              <router-link to="/explore" exact-active-class="exact-active">
+              <router-link  to="/explore">
                 <b-icon-grid></b-icon-grid>Explore
               </router-link>
             </b-nav-item>
             <b-nav-item>
-              <router-link to="/about">
+              <router-link  to="/about">
                 <b-icon-info-circle></b-icon-info-circle>About
               </router-link>
             </b-nav-item>
@@ -30,7 +30,7 @@
         </b-collapse>
       </b-container>
     </b-navbar>
-     <router-view />
+    <router-view />
   </div>
 </template>
 
@@ -48,11 +48,5 @@ a:hover {
   text-decoration: none;
   color: #FF9966;
 }
-
-a:active {
-  color: #fd8d31;
-}
-
-
 </style>
 

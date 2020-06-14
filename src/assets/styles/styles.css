@@ -14,6 +14,17 @@ body {
     font-family: 'NunitoSans', Arial, Helvetica, sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
+a.router-link-active {
+    color: #f66;
+}
+
+li.router-link-active a {
+    color: #f66;
+}
 
 .logo {
     color: #ff7014;
