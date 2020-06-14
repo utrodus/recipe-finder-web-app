@@ -8,6 +8,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import './assets/styles/styles.css'
 
+import './components/custom/footer.js';
+
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
 
