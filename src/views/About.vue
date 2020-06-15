@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <b-jumbotron>
-      <h1>Ini Detail</h1>
+      <h1>Ini About</h1>
     </b-jumbotron>
   </div>
 </template>

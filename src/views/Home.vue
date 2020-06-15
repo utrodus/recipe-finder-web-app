@@ -62,7 +62,9 @@
           <b-row>
             <div v-bind:key="data.index" v-for="data in meals">
               <b-card
+                v-b-modal.modal-tall
                 v-bind:img-src="data.strMealThumb"
+                @click="getDetail(data.idMeal)"
                 class="mb-4 meal-item mr-4"
                 img-alt="Card image"
                 img-top
@@ -72,17 +74,40 @@
                 id="meal-item"
               >
                 <b-card-text class="text-center">{{data.strMeal}}</b-card-text>
-
-                <b-button class="button-filter" @click="getDetail(data.idMeal)">Lihat Resep</b-button>
-               
               </b-card>
             </div>
 
-            <b-modal id="modal-tall" v-bind:title="detailMeal.strMeal">
-              <p class="my-4" v-for="i in 20" :key="i">
-                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-              </p>
+            <b-modal id="modal-tall" title="Detail Resep">
+              <h4 class="mb-4">{{detailMeal.strMeal}}</h4>
+              <hr />
+              <p>Category : {{detailMeal.strCategory}}</p>
+              <p>Area : {{detailMeal.strArea}}</p>
+              <h5 class="mt-2">Instructions :</h5>
+              <p>{{detailMeal.strInstructions}}</p>
+              <h5 class="mt-2">Ingredient :</h5>
+              <b-list-group>
+                <b-list-group-item>{{detailMeal.strIngredient1}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient2}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient3}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient4}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient5}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient6}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient7}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient8}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient9}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient10}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient11}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient12}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient13}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient14}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient15}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient16}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient17}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient18}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient19}}</b-list-group-item>
+                <b-list-group-item>{{detailMeal.strIngredient20}}</b-list-group-item>
+                
+              </b-list-group>
             </b-modal>
           </b-row>
         </div>

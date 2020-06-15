@@ -1,6 +1,6 @@
 import Home from '../views/Home.vue';
 import About from '../views/About.vue';
-import Detail from '../views/About.vue';
+import Detail from '../views/Detail.vue';
 
 const routes = [
     { path: '/', component: Home },
