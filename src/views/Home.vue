@@ -19,16 +19,16 @@
     </b-jumbotron>
 
     <div class="row">
-      <div class="col-md-3 col-sm-4 col-xs-4 filter">
-        <div class="card">
+      <div class="col-md-4 col-sm-12 col-xs-4 col-lg-3 filter mb-3">
+        <b-card class="filter-card">
           <h2>Filter Resep</h2>
           <a v-b-toggle href="#area" @click.prevent class="toogle-button">
-            World Cuisine
+            Berdasarkan Negara
             <b-icon-chevron-down class="icon-toogle"></b-icon-chevron-down>
           </a>
           <b-collapse id="area">
             <b-form-group>
-              <b-form-radio v-model="selected" name="Amerika" value="Amerika">Amerika</b-form-radio>
+              <b-form-radio v-model="selected" name="Amerika" value="American">Amerika</b-form-radio>
               <b-form-radio v-model="selected" name="British" value="British">British</b-form-radio>
               <b-form-radio v-model="selected" name="Canadian" value="Canadian">Canadian</b-form-radio>
               <b-form-radio v-model="selected" name="Chinese" value="Chinese">Chinese</b-form-radio>
@@ -53,20 +53,102 @@
               <b-form-radio v-model="selected" name="Vietnamese" value="Vietnamese">Vietnamese</b-form-radio>
             </b-form-group>
           </b-collapse>
+
+          <b-button variant="primary" class="button-filter" @click="getPosts(selected)">Filter</b-button>
+        </b-card>
+      </div>
+      <div class="col-md-8 meal-list">
+        <div v-if="meals.length">
+          <b-row>
+            <div v-bind:key="data.index" v-for="data in meals">
+              <b-card
+                v-bind:img-src="data.strMealThumb"
+                class="mb-4 meal-item mr-4"
+                img-alt="Card image"
+                img-top
+                align="center"
+                style=" border-top-left-radius: 10px;
+    border-top-right-radius: 10px;"
+                id="meal-item"
+              >
+                <b-card-text class="text-center">{{data.strMeal}}</b-card-text>
+
+                <b-button class="button-filter" @click="getDetail(data.idMeal)">Lihat Resep</b-button>
+               
+              </b-card>
+            </div>
+
+            <b-modal id="modal-tall" v-bind:title="detailMeal.strMeal">
+              <p class="my-4" v-for="i in 20" :key="i">
+                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+              </p>
+            </b-modal>
+          </b-row>
+        </div>
+        <div v-else>
+          <h5>Makanan Belum Tersedia</h5>
         </div>
       </div>
-      <div class="col-10"></div>
     </div>
   </b-container>
 </template>
 
 <script>
+import axios from "axios";
+
+const MealDbBaseUrl = "https://www.themealdb.com/api/json/v1/1/filter.php?a=";
+
+function buildUrl(url) {
+  return `${MealDbBaseUrl}${url}`;
+}
+
 export default {
   name: "Home",
   data() {
     return {
-      selected: "Amerika"
+      selected: "American",
+      meals: [],
+      detailMeal: {},
+      mainProps: {
+        center: true,
+        fluidGrow: true,
+        blank: true,
+        blankColor: "#bbb",
+        width: 600,
+        height: 400,
+        class: "my-5"
+      }
     };
+  },
+  mounted() {
+    this.getPosts(this.selected);
+  },
+  methods: {
+    getPosts(url) {
+      let area = buildUrl(url);
+      axios
+        .get(area)
+        .then(response => {
+          this.meals = response.data.meals;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+
+    getDetail(idMeal) {
+      let urlDetail = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`;
+      axios
+        .get(urlDetail)
+        .then(response => {
+          console.log(response.data.meals);
+          this.detailMeal = response.data.meals[0];
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
   }
 };
 </script>
@@ -88,6 +170,7 @@ a:hover {
 }
 
 .jumbotron {
+  margin-bottom: 50px;
   background-image: url("../assets/img/bg-hero.png");
   background-size: cover;
   background-attachment: fixed;
@@ -121,18 +204,75 @@ a:hover {
 }
 
 .filter .icon-toogle {
-  margin-left: 40px;
+  margin-left: 10px;
 }
 
-.card {
-  padding: 20px 15px 20px 25px;
-  -webkit-box-shadow: 0px 0px 11px -2px rgba(0, 0, 0, 0.16);
-  -moz-box-shadow: 0px 0px 11px -2px rgba(0, 0, 0, 0.16);
-  box-shadow: 0px 0px 11px -2px rgba(0, 0, 0, 0.16);
-  border-radius: 13px;
+.filter-card {
+  border-radius: 8px;
+  padding: 10px 15px;
 }
 
 .form-group {
   padding-top: 10px;
+}
+
+.meal-list {
+  margin: 0 auto;
+}
+
+.meal-item {
+  border: none;
+  background: #fff;
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 3px 5px -1px rgba(171, 171, 171, 0.2);
+  -moz-box-shadow: 0px 3px 5px -1px rgba(171, 171, 171, 0.2);
+  box-shadow: 0px 3px 5px -1px rgba(171, 171, 171, 0.2);
+}
+
+.card-body h4.card-title {
+  font-size: 1.1em;
+}
+.card-img,
+.card-img-top {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.button-filter {
+  margin-top: 8px;
+  width: 100%;
+  background: rgb(255, 153, 102);
+  background: linear-gradient(
+    157deg,
+    rgba(255, 153, 102, 1) 0%,
+    rgba(255, 94, 98, 1) 100%
+  );
+}
+
+.button-filter {
+  margin-top: 8px;
+  width: 100%;
+  border: none;
+}
+
+@media only screen and (min-width: 320px) {
+  #meal-item {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #meal-item {
+    margin-left: 20px;
+    max-width: 80%;
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  #meal-item {
+    margin: 0 auto;
+    max-width: 220px;
+  }
 }
 </style>

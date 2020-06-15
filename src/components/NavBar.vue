@@ -15,11 +15,7 @@
               <b-icon-house-door class="d-inline-block text-top"></b-icon-house-door>Recipe
             </router-link>
           </b-nav-item>
-          <b-nav-item>
-            <router-link to="/explore">
-              <b-icon-grid></b-icon-grid>Explore
-            </router-link>
-          </b-nav-item>
+
           <b-nav-item>
             <router-link to="/about">
               <b-icon-info-circle></b-icon-info-circle>About
