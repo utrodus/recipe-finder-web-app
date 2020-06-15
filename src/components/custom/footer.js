@@ -15,32 +15,34 @@ class Footer extends HTMLElement {
         <style>
 
         *{
+
             margin:0;
             padding:0;
             box-sizing:border-box;
         }
-
+      
         
-        :host{      
+        :host{ 
+                 
             max-width: 100%;
             width: 100%;
-            position: absolute;
             bottom: 0;
-            overflow:auto;        
-            background-color: #F7F7F7;
+            overflow:auto;
+          
         }
         
         footer{
             display: flex;
-            padding-left:80px;
-            padding-right:80px;
+            max-width: 100%;
+            margin: 0 auto;
+            background-color:#F7F7F7 !important;        
         }
 
         :host p {     
+            margin: 0 auto;
             color: #575757;
             font-family: 'NunitoSans-Bold', sans-serif;
             font-size: 0.9em;
-            align-self: center;
         }
 
         span{
@@ -48,8 +50,7 @@ class Footer extends HTMLElement {
         }
         
         .social-media{
-            display:flex;
-            margin-left: 10px;
+            margin: 0 auto;
         }
 
         .resp-sharing-button__link,
@@ -138,8 +139,7 @@ class Footer extends HTMLElement {
             footer{
                 display:flex;
                 flex-direction:column;
-                padding-left:60px;
-                padding-right:60px;
+               
                 padding-top: 15px;
                 padding-bottom:15px;
             }
@@ -150,10 +150,6 @@ class Footer extends HTMLElement {
                 align-self: start;
             }
 
-            .social-media{
-                margin-left:0;
-                display:flex;
-            }
 
             .resp-sharing-button__link{
                 margin-top: 10px;
@@ -167,8 +163,7 @@ class Footer extends HTMLElement {
             footer{
                 display:flex;
                 flex-direction:row;
-                padding-left:60px;
-                padding-right:60px;
+             
             }
             :host p {     
                 color: #575757;
@@ -176,11 +171,6 @@ class Footer extends HTMLElement {
                 align-self: center;
             }
 
-            .social-media{
-                margin-left:10px;
-                display:flex;
-            }
-            
 
             .resp-sharing-button__link{
                 margin-top: 10px;
@@ -189,15 +179,11 @@ class Footer extends HTMLElement {
         }
 
         @media only screen and (min-width: 980px) {    
-            .social-media{
-                margin-left:10px;
-                display:flex;
-            }
+           
             footer{
                 display:flex;
                 flex-direction:row;
-                padding-left:60px;
-                padding-right:60px;
+               
                 padding-top: 8px;
                 padding-bottom:8px;
             }
@@ -211,9 +197,8 @@ class Footer extends HTMLElement {
 
 
         </style>
-
             <footer>
-            <p>Cari Resep  &#169; 2020 - Dicoding Academy <span>| </span> <b> Share on Social Media :</b></p>
+            <p>Cari Resep  &#169; 2020 - <b> Dicoding Academy </b></p>
             <div class ="social-media">
             <!-- Sharingbutton Facebook -->
             <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdicoding.com%2F" target="_blank" rel="noopener" aria-label="">

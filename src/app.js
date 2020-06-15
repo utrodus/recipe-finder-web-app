@@ -16,7 +16,7 @@ Vue.use(VueRouter);
 Vue.use(BootstrapVue);
 Vue.use(BootstrapVueIcons);
 const router = new VueRouter({
-  mode: 'history', routes
+   routes
 });
 
 

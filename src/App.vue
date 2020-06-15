@@ -3,6 +3,7 @@
     <NavBar />
     <router-view />
     <custom-footer></custom-footer>
+    
   </div>
 </template>
 
