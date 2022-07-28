@@ -1,5 +1,5 @@
 ## Recipe Finder Web App (Dicoding Submission : Learn Basic Web Programming)
-UI App built with ES6, Web Component,Node Package Manager, JS.
+built with ES6, Web Component,Node Package Manager, JS.
 
 Simple web App for finding food recipes made with VueJs and Bootstrap for submission Dicoding Front-end Developer
 
