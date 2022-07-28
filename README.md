@@ -25,9 +25,6 @@ Build:
 npm run build
 ```
 
-
-
-
 ### Contact Info
 - Github : [![GitHub followers](https://img.shields.io/github/followers/utrodus.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/utrodus?tab=followers) 
 - Website : [utrodus.my.id](utrodus.my.id)
