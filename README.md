@@ -6,7 +6,7 @@ Simple web App for finding food recipes made with VueJs and Bootstrap for submis
 #### Final Submission from course [Learn Front-End Web Development Fundamentals](https://www.dicoding.com/academies/163).
 #### [My Certificate](https://www.dicoding.com/certificates/QGRX57M5RP0M) 
 
-## Usage TLDR
+## Usage *TLDR
 
 How to Install :
 
