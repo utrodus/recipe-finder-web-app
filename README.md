@@ -3,7 +3,7 @@ UI App built with ES6, Web Component,Node Package Manager, JS.
 
 Simple web App for finding food recipes made with VueJs and Bootstrap for submission Dicoding Front-end Developer
 
-#### Final Submission from course [Belajar Dasar Pemrograman Web](https://www.dicoding.com/academies/123).
+#### Final Submission from course [Belajar Fundamental Front-End Web Development](https://www.dicoding.com/academies/123).
 #### [My Certificate](https://www.dicoding.com/certificates/QGRX57M5RP0M) 
 
 ## Usage TLDR
