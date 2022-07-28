@@ -13,16 +13,13 @@ How to Install :
 ```bash
 npm install
 ```
-
-## Usage
-
-Start development :
+Development :
 
 ```bash
 npm run start-dev
 ```
 
-How to build:
+Build:
 
 ```bash
 npm run build
