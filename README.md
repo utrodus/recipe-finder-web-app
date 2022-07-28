@@ -1,4 +1,4 @@
-# Web App Find Recipes With Vue
+# Recipe Finder Web APp With Vue
 
 Simple web App for finding food recipes made with VueJs and Bootstrap for submission Dicoding Front-end Developer
 
