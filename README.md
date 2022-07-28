@@ -1,6 +1,6 @@
-# Web App Cari Resep With Vue
+# Web App Find Recipes With Vue
 
-Simple web App untuk mencari resep makanan dibuat dengan VueJs dan Bootstrap untuk submission Dicoding Kelas Front-end Developer
+Simple web App for finding food recipes made with VueJs and Bootstrap for submission Dicoding Front-end Developer
 
 ## Installation
 
